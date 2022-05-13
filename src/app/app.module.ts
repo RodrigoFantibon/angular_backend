@@ -13,10 +13,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppComponent } from './app.component';
 import { LivroInserirComponent } from './livros/livro-inserir/livro-inserir.component';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
-
+import { LivroService } from './livros/livro.service';
 
 
 import { LivroListaComponent } from './livros/livro-lista/livro-lista.component';
+
 
 
 
@@ -25,7 +26,8 @@ import { LivroListaComponent } from './livros/livro-lista/livro-lista.component'
     AppComponent,
     CabecalhoComponent,
     LivroInserirComponent,
-    LivroListaComponent
+    LivroListaComponent,
+
   ],
   imports: [
     BrowserAnimationsModule,
@@ -39,7 +41,7 @@ import { LivroListaComponent } from './livros/livro-lista/livro-lista.component'
     MatInputModule,
     MatToolbarModule
   ],
-
+  providers:[LivroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,13 +1,14 @@
-<mat-card>
 
+<mat-card>
+    <form (submit)="onAdicionarLivro(livroForm)" #livroForm="ngForm">
     <mat-form-field appearance="fill">
         <mat-label>Digite o Id</mat-label>
-        <input matInput type="text" [(ngModel)]="id">
+        <input matInput type="text" ngModel name="id" #idInput>
         <button
-            *ngIf="id"
+            *ngIf="idInput.value"
             matSuffix
             mat-icon-button
-            (click)="id=0">
+            (click)="idInput.value=''">
 
             <mat-icon>close</mat-icon>
 
@@ -16,40 +17,40 @@
 
     <mat-form-field appearance="fill">
         <mat-label>Digite o Título</mat-label>
-        <input matInput type="text" [(ngModel)]="titulo">
+        <input matInput type="text" ngModel name="titulo" #tituloInput>
         <button
-            *ngIf="titulo"
+            *ngIf="tituloInput.value"
             matSuffix
             mat-icon-button
-            (click)="titulo=''">
+            (click)="tituloInput.value=''">
             <mat-icon>close</mat-icon>
         </button>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
         <mat-label>Digite o Autor</mat-label>
-        <input matInput type="text" [(ngModel)]="autor">
+        <input matInput type="text" ngModel name="autor" #autorInput>
         <button
-            *ngIf="autor"
+            *ngIf="autorInput.value"
             matSuffix
             mat-icon-button
-            (click)="autor=''">
+            (click)="autorInput.value=''">
             <mat-icon>close</mat-icon>
         </button>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Digite o Numero de Páginas</mat-label>
-      <input matInput type="text" [(ngModel)]="numero_paginas">
+      <input matInput type="text" ngModel name="numero_paginas" #numeroPagInput>
       <button
-          *ngIf="numero_paginas"
+          *ngIf="numeroPagInput.value"
           matSuffix
           mat-icon-button
-          (click)="numero_paginas=0">
+          (click)="numeroPagInput.value=''">
           <mat-icon>close</mat-icon>
       </button>
   </mat-form-field>
 
-    <button color="primary" mat-raised-button (click)="onAdicionarLivro()">Inserir livro</button>
-
+    <button color="primary" mat-raised-button >Inserir livro</button>
+  </form>
 </mat-card>

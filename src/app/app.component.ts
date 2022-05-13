@@ -8,7 +8,6 @@ import { Livro } from './livros/livro.model';
 })
 export class AppComponent {
 
-  //meuNumero: number = 2
   livros: Livro[] = []
   onLivroAdicionado (livro): void{
     //... operador spread
