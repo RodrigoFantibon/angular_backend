@@ -12,7 +12,8 @@ export class LivroService{
     adicionarLivro(id: number, titulo: string, autor: string, numero_paginas: number):void{
         this.livros.push({
           // id: id, titulo: titulo,  autor : autor, numero_paginas: numero_paginas
-          id, titulo, autor, numero_paginas
+          id, titulo, autor,
+          numero_paginas
         })
         this.listaLivrosAtualizada.next([...this.livros])
     }
