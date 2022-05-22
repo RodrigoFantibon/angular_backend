@@ -12,7 +12,7 @@ export class LivroInserirComponent{
 
 
 
-    constructor(private livroService: LivroService){
+    constructor(public livroService: LivroService){
 
     }
 
@@ -22,15 +22,13 @@ export class LivroInserirComponent{
     // numero_paginas: number;
 
     onAdicionarLivro(form: NgForm){
-      if (form.invalid){
-        return;
-      }
       this.livroService.adicionarLivro(
         form.value.id,
         form.value.titulo,
         form.value.autor,
         form.value.numero_paginas
       )
+      form.resetForm();
 
         // const livro: Livro = {
         //     id: form.value.id,
